@@ -42,3 +42,10 @@ block a merge.
 You can also trigger it manually against any plugin path from the Actions tab
 (`Plugin Live Check` → `Run workflow`), which is useful for re-checking an existing plugin after
 its target site changes layout.
+
+## See also
+
+`check:plugin` catches wrong/missing data automatically, but it's not a substitute for actually
+looking at the output. See the [website tutorial](./website-tutorial.md) for testing your plugin
+interactively in the browser — useful for spot-checking filters, pagination, and chapter
+formatting by eye before opening a PR.
