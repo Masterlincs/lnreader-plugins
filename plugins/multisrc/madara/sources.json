@@ -660,5 +660,10 @@
       "lang": "English",
       "useNewChapterEndpoint": true
     }
+  },
+  {
+    "id": "crimsonscrolls",
+    "sourceSite": "https://crimsonscrolls.net",
+    "sourceName": "Crimson Scrolls"
   }
 ]
