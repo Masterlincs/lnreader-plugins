@@ -693,5 +693,21 @@
     "options": {
       "useNewChapterEndpoint": true
     }
+  },
+  {
+    "id": "novelreact",
+    "sourceSite": "https://novelreact.net/",
+    "sourceName": "NovelReact",
+    "options": {
+      "useNewChapterEndpoint": true
+    }
+  },
+  {
+    "id": "novellounge",
+    "sourceSite": "https://novellounge.com/",
+    "sourceName": "Novel Lounge",
+    "options": {
+      "useNewChapterEndpoint": true
+    }
   }
 ]
