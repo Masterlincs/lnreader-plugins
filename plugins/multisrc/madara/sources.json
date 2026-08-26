@@ -468,7 +468,7 @@
   {
     "id": "nabiscans",
     "sourceSite": "https://nabiscans.com/",
-    "sourceName": "NABİ SCANS",
+    "sourceName": "NAB\u0130 SCANS",
     "options": {
       "useNewChapterEndpoint": true,
       "lang": "Turkish",
@@ -479,7 +479,7 @@
   {
     "id": "ekitaplar",
     "sourceSite": "https://e-kitaplar.com/",
-    "sourceName": "E-KİTAPLAR",
+    "sourceName": "E-K\u0130TAPLAR",
     "options": {
       "useNewChapterEndpoint": true,
       "lang": "Turkish"
@@ -708,6 +708,23 @@
     "sourceName": "Novel Lounge",
     "options": {
       "useNewChapterEndpoint": true
+    }
+  },
+  {
+    "id": "whizzerwebnovels",
+    "sourceSite": "https://whatsawhizzerwebnovels.com/",
+    "sourceName": "What's A Whizzer Web Novels",
+    "options": {
+      "useNewChapterEndpoint": true
+    }
+  },
+  {
+    "id": "hispanovelas",
+    "sourceSite": "https://hispanovelas.com/",
+    "sourceName": "Hispanovelas",
+    "options": {
+      "useNewChapterEndpoint": true,
+      "lang": "Spanish"
     }
   }
 ]
