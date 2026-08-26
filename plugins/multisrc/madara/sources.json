@@ -678,5 +678,13 @@
       "lang": "Spanish",
       "useNewChapterEndpoint": true
     }
+  },
+  {
+    "id": "archtranslation",
+    "sourceSite": "https://archtranslation.com/",
+    "sourceName": "ArchTranslation",
+    "options": {
+      "useNewChapterEndpoint": true
+    }
   }
 ]

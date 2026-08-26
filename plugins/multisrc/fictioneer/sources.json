@@ -85,5 +85,13 @@
         "novelSummary": "div.illusia-single-story__description"
       }
     }
+  },
+  {
+    "id": "springofromance",
+    "sourceSite": "https://springofromance.com/",
+    "sourceName": "Spring of Romance",
+    "options": {
+      "browsePage": "stories"
+    }
   }
 ]
