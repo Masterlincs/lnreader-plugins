@@ -65,5 +65,13 @@
       "versionIncrements": 1,
       "browsePage": "stories"
     }
+  },
+  {
+    "id": "springofromance",
+    "sourceSite": "https://springofromance.com/",
+    "sourceName": "Spring of Romance",
+    "options": {
+      "browsePage": "stories"
+    }
   }
 ]
