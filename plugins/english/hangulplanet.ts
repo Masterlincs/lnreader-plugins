@@ -10,7 +10,7 @@ class HangulPlanetPlugin implements Plugin.PluginBase {
   icon = 'src/en/hangulplanet/icon.png';
   // Keep paths relative, matching the old Madara plugin and LNReader's DB.
   site = 'https://hangulplanet.com/';
-  version = '2.4.0';
+  version = '2.5.0';
 
   private async getPage(url: string): Promise<CheerioAPI> {
     const response = await fetchApi(new URL(url, this.site).toString());
@@ -86,7 +86,7 @@ class HangulPlanetPlugin implements Plugin.PluginBase {
   private parseChapters($: CheerioAPI): Plugin.ChapterItem[] {
     const chapters: Plugin.ChapterItem[] = [];
 
-    $('#chapters a[href*="/chapter-"]').each((_, element) => {
+    $('a[href*="/chapter-"]').each((_, element) => {
       const link = $(element);
       const url = new URL(link.attr('href') || '', this.site);
       const match = url.pathname.match(/\/chapter-(\d+(?:\.\d+)?)\/?$/);
