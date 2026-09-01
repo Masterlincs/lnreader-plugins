@@ -9,7 +9,7 @@ class HangulPlanetPlugin implements Plugin.PluginBase {
   name = 'HangulPlanet';
   icon = 'src/en/hangulplanet/icon.png';
   site = 'https://hangulplanet.com';
-  version = '1.0.0';
+  version = '2.3.0';
 
   private async getPage(url: string): Promise<CheerioAPI> {
     const response = await fetchApi(new URL(url, this.site).toString());
