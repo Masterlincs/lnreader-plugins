@@ -8,8 +8,9 @@ class HangulPlanetPlugin implements Plugin.PluginBase {
   id = 'hangulplanet';
   name = 'HangulPlanet';
   icon = 'src/en/hangulplanet/icon.png';
-  site = 'https://hangulplanet.com';
-  version = '2.3.0';
+  // Keep paths relative, matching the old Madara plugin and LNReader's DB.
+  site = 'https://hangulplanet.com/';
+  version = '2.4.0';
 
   private async getPage(url: string): Promise<CheerioAPI> {
     const response = await fetchApi(new URL(url, this.site).toString());
@@ -33,7 +34,9 @@ class HangulPlanetPlugin implements Plugin.PluginBase {
     if (!href) return '';
     const url = new URL(href, this.site);
     const parts = url.pathname.split('/').filter(Boolean);
-    return parts.length === 2 && parts[0] === 'novel' ? url.pathname : '';
+    return parts.length === 2 && parts[0] === 'novel'
+      ? url.pathname.replace(/^\/+/, '')
+      : '';
   }
 
   private parseNovelList($: CheerioAPI): Plugin.NovelItem[] {
@@ -90,11 +93,11 @@ class HangulPlanetPlugin implements Plugin.PluginBase {
       if (!match) return;
 
       const title = link.find('span.line-clamp-1').first().text().trim();
-      if (!title) return;
+      if (!title || /delay notice/i.test(title)) return;
 
       chapters.push({
         name: title,
-        path: url.pathname,
+        path: url.pathname.replace(/^\/+/, ''),
         chapterNumber: Number.parseFloat(match[1]),
         releaseTime: link.find('time').attr('datetime') || null,
       });
@@ -187,7 +190,7 @@ class HangulPlanetPlugin implements Plugin.PluginBase {
     chapters.sort((a, b) => (a.chapterNumber || 0) - (b.chapterNumber || 0));
 
     return {
-      path: novelUrl.pathname,
+      path: novelUrl.pathname.replace(/^\/+/, ''),
       name: title,
       cover,
       author: author || undefined,
@@ -212,6 +215,8 @@ class HangulPlanetPlugin implements Plugin.PluginBase {
     if (!content) throw new Error('HangulPlanet returned an empty chapter.');
     return content;
   }
+
+  resolveUrl = (path: string) => new URL(path, this.site).toString();
 }
 
 export default new HangulPlanetPlugin();
